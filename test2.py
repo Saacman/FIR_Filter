@@ -23,7 +23,6 @@ y_len = len(y)
 
 for k in range(y_len):
     for i in range(k+1):
-        #y[k] += b[k] * data[y_len-k-1] - a[k] * y[y_len-k-1]
         y[k] += data[i] * b[k-i] if((k-i)<b_len and i<data_len) else 0
         y[k] -= data[i+1] * a[k-(i+1)] if((k-(i+1))<a_len and (i+1)<data_len) else 0
     os.system("clear")
