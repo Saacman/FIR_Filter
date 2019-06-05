@@ -1,9 +1,14 @@
 import numpy as np
 import soundfile as sf
 from scipy.signal import firwin
-string = 'lowpass'
+
+size = 8
+type = 'lowpass'
+freq = 723
+
 data, sample_rate = sf.read('chorwat_c3.wav')
-b = firwin(8, 0.284, pass_zero = string)
+cutoff = 2 * np.py * (freq / sample_rate)
+b = firwin(size, 0.284, pass_zero = type)
 
 data_len = len(data)
 b_len = len(b)
