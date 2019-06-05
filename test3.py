@@ -6,8 +6,9 @@ from scipy.signal import firwin, butter
 size = 8
 type = 'lowpass'
 freq = 723
-
 data, sample_rate = sf.read('chorwat_c3.wav')
+
+
 cutoff = 2 * np.pi * (freq / sample_rate)
 b, a= butter(size, cutoff, type)
 
